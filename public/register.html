@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <!-- רקע עם חלקיקים -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+      <div class="hero">
+        <h1>Join Us</h1>
+        <p>Create a new account to access exclusive features with AI</p>
+      </div>
+
+      <div class="form-container">
+        <form
+          id="registerForm"
+          action="/register"
+          method="POST"
+          onsubmit="return validateForm(event)"
+        >
+          <div class="input-container">
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <button type="submit" class="register-btn">Register</button>
+        </form>
+        <button class="google-login-btn" onclick="handleGoogleRegister()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 50 50"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 23.403V23.39 10.389L11.88 10.3h-.01L9.14 8.28C7.47 7.04 5.09 7.1 3.61 8.56 2.62 9.54 2 10.9 2 12.41v3.602L12 23.403zM38 23.39v.013l10-7.391V12.41c0-1.49-.6-2.85-1.58-3.83-1.46-1.457-3.765-1.628-5.424-.403L38.12 10.3 38 10.389V23.39zM14 24.868l10.406 7.692c.353.261.836.261 1.189 0L36 24.868V11.867L25 20l-11-8.133V24.868zM38 25.889V41c0 .552.448 1 1 1h6.5c1.381 0 2.5-1.119 2.5-2.5V18.497L38 25.889zM12 25.889L2 18.497V39.5C2 40.881 3.119 42 4.5 42H11c.552 0 1-.448 1-1V25.889z"
+            ></path>
+          </svg>
+          <span> Continue with Google</span>
+        </button>
+        <p class="login-link">
+          Already have an account? <a href="index.html">Log in</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      // הגדרת רקע עם Particles.js
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 150, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 120,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: { enable: true, speed: 4 },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // בדיקת סיסמאות תואמות
+      function validateForm(event) {
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          event.preventDefault();
+          return false;
+        }
+
+        return true;
+      }
+
+      // טיפול בכתובת URL להצגת הודעות הצלחה או שגיאה
+      const urlParams = new URLSearchParams(window.location.search);
+
+      if (urlParams.get("success") === "true") {
+        alert("Registration successful! You can now log in.");
+        window.location.href = "/"; // הפניה לעמוד התחברות
+      }
+
+      if (urlParams.get("error") === "exists") {
+        alert("This email is already registered. Please log in.");
+      }
+
+      if (urlParams.get("error") === "server") {
+        alert("An error occurred. Please try again later.");
+      }
+
+      function handleGoogleRegister() {
+        window.location.href = "/auth/google";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(145deg, #000, #000);
+  text-align: center;
+  color: #fff;
+  padding: 8rem 2rem;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.hero-content .btn {
+  background: #000;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* About Section */
+.about {
+  padding: 5rem 3rem;
+  background: #000;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Section */
+.showcase {
+  background: #000;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.showcase h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.showcase p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+input,
+select {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+input:hover,
+select:hover {
+  background: #fff;
+  color: #000;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #ccc;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto; /* מבטיח שה-footer יישאר בתחתית */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+}
+
+.social-icons li {
+  margin-left: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #contact .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #contact .social-icons {
+    gap: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content,
+.about h2,
+.showcase h2 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input,
+  select {
+    max-width: 100%;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer .social-icons {
+    gap: 1rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+}
+
+/* Image Section */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* גובה התמונה המרכזית */
+  margin: 0 auto;
+  padding: 2rem;
+  background: #111; /* רקע כהה */
+  border-radius: 12px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}

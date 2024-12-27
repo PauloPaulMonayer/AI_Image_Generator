@@ -1,0 +1,234 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  position: relative; /* חשוב כדי לאפשר מיקום של particles-js */
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* לוודא שהוא מאחורי שאר האלמנטים */
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  animation: glow 2s infinite alternate, fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.form-container {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input-container input:focus {
+  border: 1px solid #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.8);
+}
+
+button {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #6c63ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #a19bff;
+  transform: scale(1.05);
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: #fff;
+  border: 1px solid #444;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-login-btn svg {
+  margin-right: 10px;
+}
+
+.google-login-btn:hover {
+  background: #3c3c3c;
+  border-color: #6c63ff;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.login-link a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #6c63ff, 0 0 10px #6c63ff, 0 0 15px #6c63ff;
+  }
+  to {
+    text-shadow: 0 0 10px #a19bff, 0 0 20px #a19bff, 0 0 30px #a19bff;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom animation for subtle text movement */
+@keyframes textMove {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.register-btn {
+  background: #444;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.register-btn:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
