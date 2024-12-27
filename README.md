@@ -58,7 +58,7 @@ The **AI Image Generator** is a full-stack web application that allows users to 
 - **MongoDB**: Stores user data and image metadata.
 
 ### **AI Integration**
-- **OpenAI API**: Generates images dynamically based on user inputs.
+- **AI API**: Generates images dynamically based on user inputs.
 
 ---
 
