@@ -164,7 +164,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 For inquiries or support, reach out to:
 - **Email**: [monayer42@gmail.com](mailto:monayer42@gmail.com)
 - **LinkedIn**: [Paulo Monayer](https://www.linkedin.com/in/paulo-monayer/)
-- **GitHub**: [YourUsername](https://github.com/PauloPaulMonayer)
+- **GitHub**: [PauloPaulMonayer](https://github.com/PauloPaulMonayer)
 
 ---
 
